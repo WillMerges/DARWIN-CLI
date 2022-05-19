@@ -269,7 +269,7 @@ xb_ret_t xb_at_cmd(const char cmd[2], uint8_t* param, size_t param_size) {
     frame->header.start_delimiter = START_DELIMETER;
     frame->header.length = hton16(sizeof(xb_at_frame_t) - sizeof(xb_header_t) + param_size);
     frame->frame_type = LOCAL_AT_CMD_FRAME_TYPE;
-    frame->frame_id = 0;
+    frame->frame_id = 0xCF;
     frame->at_command[0] = cmd[0];
     frame->at_command[1] = cmd[1];
 
